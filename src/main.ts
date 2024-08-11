@@ -7,9 +7,6 @@ const cloudinary = new Cloudinary({
     cloud: {
         cloudName: "bradgarropy",
     },
-    url: {
-        analytics: false,
-    },
 })
 
 const a = cloudinary

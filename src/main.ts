@@ -2,6 +2,7 @@ import "~/src/style.css"
 
 import {Cloudinary} from "@cloudinary/url-gen"
 import {defaultImage} from "@cloudinary/url-gen/actions/delivery"
+import {scale} from "@cloudinary/url-gen/actions/resize"
 
 const cloudinary = new Cloudinary({
     cloud: {
@@ -13,12 +14,14 @@ const a = cloudinary
     .image("cloudinary-javascript-fallback-demo/a")
     .format("auto")
     .quality("auto")
+    .resize(scale().width(410))
     .toURL()
 
 const b = cloudinary
     .image("cloudinary-javascript-fallback-demo/b")
     .format("auto")
     .quality("auto")
+    .resize(scale().width(410))
     .toURL()
 
 // STEP 1
@@ -26,6 +29,7 @@ const b = cloudinary
 //     .image("cloudinary-javascript-fallback-demo/c")
 //     .format("auto")
 //     .quality("auto")
+//     .resize(scale().width(410))
 //     .delivery(defaultImage("cloudinary-javascript-fallback-demo:sea.jpg"))
 //     .toURL()
 
@@ -34,6 +38,7 @@ const cBroken = cloudinary
     .image("cloudinary-javascript-fallback-demo/cBroken")
     .format("auto")
     .quality("auto")
+    .resize(scale().width(410))
     .delivery(defaultImage("cloudinary-javascript-fallback-demo:sea.jpg"))
     .toURL()
 
